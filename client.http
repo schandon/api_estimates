@@ -1,0 +1,19 @@
+@baseUrl = http://localhost:4444
+
+# GET health
+# @name healthCheck
+GET {{baseUrl}}/health
+
+###
+
+# Get Vessels
+# @name getVessels
+GET {{baseUrl}}/api/v1/vessel
+
+###
+
+# Get Vessels
+# @name getCoins
+GET {{baseUrl}}/api/v1/coin
+
+###

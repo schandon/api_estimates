@@ -1,0 +1,28 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["driverAdapters"]
+  binaryTargets   = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model vessel {
+  embarcacao Int    @id @default(autoincrement())
+  nome       String
+  imo        String
+  mmsi       String
+  callsign   String
+  bloqueado  String
+
+  @@map("Embarcacoes")
+}
+
+model coin {
+  moeda     String @id
+  descricao String
+
+  @@map("Moeda")
+}
