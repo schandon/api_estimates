@@ -1,0 +1,19 @@
+@baseUrl = http://localhost:4444
+
+# GET health
+# @name healthCheck
+GET {{baseUrl}}/health
+
+###
+
+# Get OS
+# @name getServiceOrder
+GET {{baseUrl}}/api/v1/os
+
+###
+
+# Get OS
+# @name getServiceOrder
+GET {{baseUrl}}/api/v1/os/OS000124-SM
+
+###

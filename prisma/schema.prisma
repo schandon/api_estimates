@@ -1,7 +1,6 @@
 generator client {
-  provider        = "prisma-client-js"
-  previewFeatures = ["driverAdapters"]
-  binaryTargets   = ["native", "linux-musl-openssl-3.0.x"]
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
 }
 
 datasource db {
@@ -10,19 +9,29 @@ datasource db {
 }
 
 model vessel {
-  embarcacao Int    @id @default(autoincrement())
-  nome       String
-  imo        String
-  mmsi       String
-  callsign   String
-  bloqueado  String
+  embarcacao Int     @id @default(autoincrement())
+  nome       String?
+  imo        String?
+  mmsi       String?
+  callsign   String?
+  bloqueado  Int?
 
   @@map("Embarcacoes")
 }
 
-model coin {
-  moeda     String @id
-  descricao String
+model service_orders {
+  OrdemServico      String   @id
+  DataServico       DateTime
+  Cliente           String
+  ReferenciaCliente String?
+  Embarcacao        Int?
 
-  @@map("Moeda")
+  @@map("OrdensServico")
+}
+
+model ndo_srvproperty {
+  license Bytes? @db.Image
+
+  @@map("$ndo$srvproperty")
+  @@ignore
 }

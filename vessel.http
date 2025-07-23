@@ -13,7 +13,12 @@ GET {{baseUrl}}/api/v1/vessel
 ###
 
 # Get Vessels
-# @name getCoins
-GET {{baseUrl}}/api/v1/coin
+# @name getVesselsByImo
+GET {{baseUrl}}/api/v1/vessel/imo/9142954
+
+###
+# Get Vessels
+# @name getVesselsByMmsi
+GET {{baseUrl}}/api/v1/vessel/mmsi/229543000
 
 ###
