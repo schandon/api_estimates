@@ -4,14 +4,21 @@
 # @name healthCheck
 GET {{baseUrl}}/health
 
-###
+#### Get Vessels
+# @name getVesselsByID
+GET {{baseUrl}}/api/v1/vessel/26
 
+###
 # Get Vessels
 # @name getVessels
 GET {{baseUrl}}/api/v1/vessel
 
 ###
+# Get Vessels
+# @name getVesselsByID
+GET {{baseUrl}}/api/v1/vessel/26
 
+###
 # Get Vessels
 # @name getVesselsByImo
 GET {{baseUrl}}/api/v1/vessel/imo/9142954

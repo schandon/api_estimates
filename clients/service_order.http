@@ -1,11 +1,5 @@
 @baseUrl = http://localhost:4444
-
-# GET health
-# @name healthCheck
-GET {{baseUrl}}/health
-
-###
-
+@authToken = 
 # Get OS
 # @name getServiceOrder
 GET {{baseUrl}}/api/v1/os
