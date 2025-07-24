@@ -1,10 +1,12 @@
 import { PrismaClient } from '@prisma/client';
 import type { FastifyPluginCallbackZod } from 'fastify-type-provider-zod';
 import { z } from 'zod/v4';
+import { authenticateToken } from '../../middleware/auth.middleware.ts';
 
 const prisma = new PrismaClient();
 
 export const getServiceOrder: FastifyPluginCallbackZod = (app) => {
+  app.addHook('preHandler', authenticateToken);
   app.get('/api/v1/os', async (_request, reply) => {
     try {
       const result = await prisma.service_orders.findMany();

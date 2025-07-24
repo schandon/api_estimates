@@ -1,31 +1,34 @@
 @baseUrl = http://localhost:4444
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjExODIxOTM0ODQ1NjA5MTkyNTI0MSIsImVtYWlsIjoiYWxleGFuZHJlLnBlcmVpcmFAanJjYnJhc2lsLmNvbSIsImlhdCI6MTc1MzM3ODM2NSwiZXhwIjoxNzUzNDA3MTY1fQ.HkkVpzQiAcT7MRotNaj9wUhjXhsN-Fb2sgEDbBE4pys
+
 
 # GET health
 # @name healthCheck
 GET {{baseUrl}}/health
 
+
 #### Get Vessels
 # @name getVesselsByID
 GET {{baseUrl}}/api/v1/vessel/26
-
+Authorization: Bearer {{token}}
 ###
 # Get Vessels
 # @name getVessels
 GET {{baseUrl}}/api/v1/vessel
-
+Authorization: Bearer {{token}}
 ###
 # Get Vessels
 # @name getVesselsByID
 GET {{baseUrl}}/api/v1/vessel/26
-
+Authorization: Bearer {{token}}
 ###
 # Get Vessels
 # @name getVesselsByImo
 GET {{baseUrl}}/api/v1/vessel/imo/9142954
-
+Authorization: Bearer {{token}}
 ###
 # Get Vessels
 # @name getVesselsByMmsi
 GET {{baseUrl}}/api/v1/vessel/mmsi/229543000
-
+Authorization: Bearer {{token}}
 ###

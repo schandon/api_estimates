@@ -2,6 +2,7 @@
 NODE_ENV=development
 API_PORT=3000
 HOST_API=http://localhost
+JWT_SECRET='teste'
 
 # Database
 DATABASE_URL="sqlserver://<HOST>:<PORT>;user=<USER>;password=<PASSWORD>;database=<DATABASE_NAME>trustServerCertificate=true;encrypt=false"

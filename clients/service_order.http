@@ -1,13 +1,14 @@
 @baseUrl = http://localhost:4444
-@authToken = 
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjExODIxOTM0ODQ1NjA5MTkyNTI0MSIsImVtYWlsIjoiYWxleGFuZHJlLnBlcmVpcmFAanJjYnJhc2lsLmNvbSIsImlhdCI6MTc1MzM3ODM2NSwiZXhwIjoxNzUzNDA3MTY1fQ.HkkVpzQiAcT7MRotNaj9wUhjXhsN-Fb2sgEDbBE4pys
+
 # Get OS
 # @name getServiceOrder
 GET {{baseUrl}}/api/v1/os
-
+Authorization: Bearer {{token}}
 ###
 
 # Get OS
 # @name getServiceOrder
 GET {{baseUrl}}/api/v1/os/OS000124-SM
-
+Authorization: Bearer {{token}}
 ###

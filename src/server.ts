@@ -21,7 +21,6 @@ app.setValidatorCompiler(validatorCompiler);
 app.get('/health', () => {
   return 'OK ^_^';
 });
-
 app.register(getVessel);
 app.register(getServiceOrder);
 
