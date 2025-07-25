@@ -25,13 +25,13 @@ No arquivo da Rota, que está no caminho `./src/http/routes/**.ts`.  Ao utilizar
 As rotas da aplicação estão descritas na pasta de `clients`, separados por cada rota de ação, sendo elas:
   - `vessel.http` 
   - `service_order.http`
-  <br>
+  
 - **Vessel**
   - `/api/v1/vessel/:id` - Busca informações de um navio apartir do **ID**
   - `/api/v1/vessel/mmsi/:mmsi` -Busca informações de um navio apartir do **MMSI**
   - `/api/v1/vessel/imo/:imo` - Busca informações de um navio apartir do **IMO**
   - `/api/v1/vessel` - Busca todas as informações de navios da base
-   <br> 
+   
 - **Service Order**
   - `/api/v1/os` - Busca todas as informações de Service Order
   - `/api/v1/os/:os` - Busca informações de um navio apartir do **Número de OS**
