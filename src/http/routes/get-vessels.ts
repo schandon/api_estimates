@@ -1,36 +1,43 @@
 import { PrismaClient } from '@prisma/client';
 import type { FastifyPluginCallbackZod } from 'fastify-type-provider-zod';
 import { z } from 'zod/v4';
-import { authenticateToken } from '../../middleware/auth.middleware.ts';
 
 const prisma = new PrismaClient();
 
 export const getVessel: FastifyPluginCallbackZod = (app) => {
-  app.addHook('preHandler', authenticateToken);
-  app.get('/api/v1/vessel', async (_request, reply) => {
-    try {
-      const result = await prisma.vessel.findMany({
-        select: {
-          embarcacao: true,
-          nome: true,
-          imo: true,
-          mmsi: true,
-          callsign: true,
-          bloqueado: true,
-        },
-      });
-      return result;
-    } catch {
-      return reply
-        .status(400)
-        .send({ message: 'Error GET: Vessels not found' });
+  app.get(
+    '/api/v1/vessel',
+    {
+      schema: {
+        tags: ['Vessel'],
+      },
+    },
+    async (_request, reply) => {
+      try {
+        const result = await prisma.vessel.findMany({
+          select: {
+            embarcacao: true,
+            nome: true,
+            imo: true,
+            mmsi: true,
+            callsign: true,
+            bloqueado: true,
+          },
+        });
+        return result;
+      } catch {
+        return reply
+          .status(400)
+          .send({ message: 'Error GET: Vessels not found' });
+      }
     }
-  });
+  );
 
   app.get(
     '/api/v1/vessel/imo/:imo',
     {
       schema: {
+        tags: ['Vessel'],
         params: z.object({
           imo: z.string(),
         }),
@@ -55,6 +62,7 @@ export const getVessel: FastifyPluginCallbackZod = (app) => {
     '/api/v1/vessel/mmsi/:mmsi',
     {
       schema: {
+        tags: ['Vessel'],
         params: z.object({
           mmsi: z.string(),
         }),
@@ -80,6 +88,7 @@ export const getVessel: FastifyPluginCallbackZod = (app) => {
     '/api/v1/vessel/:embarcacao',
     {
       schema: {
+        tags: ['Vessel'],
         params: z.object({
           embarcacao: z
             .string()
